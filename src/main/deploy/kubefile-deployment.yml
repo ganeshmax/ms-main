@@ -3,19 +3,19 @@ apiVersion: "extensions/v1beta1"
 kind: "Deployment"
 metadata:
   labels:
-    project: "open-api"
-    app: "ms-main"
+    team-name: "open-api"
+    app-name: "ms-main"
   name: "ms-main"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "ms-main"
+      app-name: "ms-main"
   template:
     metadata:
       labels:
-        project: "open-api"
-        app: "ms-main"
+        team-name: "open-api"
+        app-name: "ms-main"
     spec:
       containers:
       - name: "ms-main"
@@ -24,10 +24,3 @@ spec:
         - containerPort: 80
           name: "http"
           protocol: "TCP"
-        env:
-        - name: "KUBERNETES_NAMESPACE"
-          valueFrom:
-            fieldRef:
-              fieldPath: "metadata.namespace"
-        imagePullPolicy: "IfNotPresent"
-

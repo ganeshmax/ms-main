@@ -8,3 +8,5 @@ open $(minikube service ms-main --url)/greeting
 chmod -R 755 ./docker-remove.sh
 chmod -R 755 ./docker-run.sh
 chmod -R 755 ./docker-script.sh
+
+chmod +x deploy.groovy
